@@ -4,6 +4,7 @@ import { Route, Routes ,Link} from "react-router-dom";
 import { Hello } from "./Hello";
 import { Home } from "./Home";
 import PostsList from "./PostsList"
+import PostDetails from "./PostDetails";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <div>
         {" "}
         <Link to = "/Posts">  <button style={{fontSize :"30px"}}>Posts </button></Link>
+        
         <Link to ="/home"> <button style={{fontSize :"30px"}}>Home </button></Link>
        <Link to= "/hello">  <button style={{fontSize :"30px"}}>Hello</button></Link>
       
@@ -37,6 +39,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/Posts" element={<PostsList />} />
         <Route path="/hello" element={<Hello />} />
+        <Route path="/postDetails/:postId" element={<PostDetails />} />
       </Routes>
     </div>
   );
