@@ -10,9 +10,13 @@ return p.id == postId ;
 
 
     console.log(post)
+   if (post){
     return(<>
-    <h1>post details</h1>
-    <h1>{post.title}</h1>
-    <p>{post.body}</p>
-    </>)
-}
+   
+        <h1>post details</h1>
+        <h1>{post.title}</h1>
+        <p>{post.body}</p>
+        </>)
+    }
+    else   { return (   <h1>The post with id: {postId} is not exist</h1>  )} 
+   }
