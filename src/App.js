@@ -5,10 +5,30 @@ import { Hello } from "./Hello";
 import { Home } from "./Home";
 import PostsList from "./PostsList"
 import PostDetails from "./PostDetails";
+import { postsContext } from "./context/postsContext";
+
 
 
 function App() {
+  let postsData = [
+    {
+        id : 1,
+        title:"Hello World",
+        body :"this is for the first post"
+    } ,
+    {
+        id : 2,
+        title:"Hello World second",
+        body :"this is for the second post"
+    } ,
+    {
+        id : 3,
+        title:"Hello World third ",
+        body :"this is for the third post"
+    } 
+]
   return (
+    <postsContext.Provider value={postsData}> 
     <div className="App">
       <div>
         {" "}
@@ -39,9 +59,11 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/Posts" element={<PostsList />} />
         <Route path="/hello" element={<Hello />} />
+        <Route path="/PostDetails/:postId" element={<PostDetails />} />
         <Route path="/postDetails/:postId" element={<PostDetails />} />
       </Routes>
     </div>
+    </postsContext.Provider>
   );
 }
 
